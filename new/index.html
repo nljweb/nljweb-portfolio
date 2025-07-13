@@ -8,19 +8,19 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#cv">CV</a>
-      <a href="#contact">Contact</a>
-    </nav>
-    <div class="theme-toggle" id="themeToggleContainer">
-  <span id="themeToggle">🌙</span>
-  <span id="themeLabel">Dark Mode</span>
-</div>
+<header>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#cv">CV</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <div id="themeToggleContainer" style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+    <span id="themeToggle" style="font-size: 1.3rem;">🌙</span>
+    <span id="themeLabel" style="font-family: 'Poppins', sans-serif; font-size: 1rem;">Dark Mode</span>
+  </div>
+</header>
 
-  </header>
 
   <main>
     <section class="intro" id="about">
@@ -86,26 +86,27 @@
   </footer>
 
   <script>
-    document.getElementById('themeToggle').onclick = function () {
-     const toggle = document.getElementById('themeToggle');
+  const toggle = document.getElementById('themeToggle');
   const label = document.getElementById('themeLabel');
+  const toggleContainer = document.getElementById('themeToggleContainer');
 
-  document.getElementById('themeToggleContainer').addEventListener('click', function () {
+  toggleContainer.addEventListener('click', function () {
     const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
     document.documentElement.setAttribute('data-theme', isDark ? 'light' : 'dark');
     toggle.textContent = isDark ? '🌙' : '🌞';
     label.textContent = isDark ? 'Dark Mode' : 'Light Mode';
   });
 
-    function expandCard(title, desc) {
-      document.getElementById('expandedTitle').textContent = title;
-      document.getElementById('expandedDescription').textContent = desc;
-      document.getElementById('expandedCard').classList.add('show');
-    }
+  function expandCard(title, desc) {
+    document.getElementById('expandedTitle').textContent = title;
+    document.getElementById('expandedDescription').textContent = desc;
+    document.getElementById('expandedCard').classList.add('show');
+  }
 
-    function closeCard() {
-      document.getElementById('expandedCard').classList.remove('show');
-    }
-  </script>
+  function closeCard() {
+    document.getElementById('expandedCard').classList.remove('show');
+  }
+</script>
+
 </body>
 </html>
