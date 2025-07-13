@@ -139,7 +139,7 @@ section {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 1.5rem;
-  padding: 1rem;
+  padding: 0.5rem 1rem 2rem;
   justify-items: center;
 }
 
@@ -213,7 +213,7 @@ section {
 
 footer {
   text-align: center;
-  padding: 2rem;
+  padding: 1rem;
   background-color: var(--bg-color);
   color: var(--text-color);
 }
