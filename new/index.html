@@ -2,8 +2,9 @@
 <html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
   <title>Nick Jordan | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -30,26 +31,23 @@
     </section>
 
     <section id="projects">
-      <h2 style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">Projects</h2>
+      <h2>Projects</h2>
       <div class="card-grid">
-        <div class="card" onclick="expandCard('Jarvis AI', 'Local AI assistant setup powered by Python, OpenCV and face recognition.')">
-          <h3>Jarvis AI</h3>
-          <p>Local AI assistant setup</p>
+        <div class="card" onclick="expandCard('Jarvis AI','Local AI assistant powered by Python,etc.')">
+          <h3>Jarvis AI</h3><p>Local AI assistant</p>
         </div>
-        <div class="card" onclick="expandCard('Expense Tracker', 'Built in PowerApps with SharePoint and automation to manage expenses.')">
-          <h3>Expense Tracker</h3>
-          <p>PowerApps + SharePoint</p>
+        <div class="card" onclick="expandCard('Expense Tracker','Built in PowerApps and SharePoint.')">
+          <h3>Expense Tracker</h3><p>PowerApps + SharePoint</p>
         </div>
-        <div class="card" onclick="expandCard('NeonDB', 'Modern portfolio database designed to visually catalogue projects.')">
-          <h3>NeonDB</h3>
-          <p>Modern portfolio database</p>
+        <div class="card" onclick="expandCard('NeonDB','Modern portfolio database.')">
+          <h3>NeonDB</h3><p>Portfolio DB</p>
         </div>
       </div>
     </section>
 
     <section id="cv">
-      <h2 style="text-align: center;">Certifications</h2>
-      <ul style="text-align: center; padding-left: 0; list-style: none;">
+      <h2>Certifications</h2>
+      <ul class="cert-list">
         <li>CompTIA A+ | Core 1 + 2</li>
         <li>IOSH Managing Safely</li>
         <li>Microsoft Power Platform</li>
@@ -58,15 +56,17 @@
     </section>
 
     <section id="contact">
-      <h2 style="text-align: center;">Contact</h2>
-      <p style="text-align: center;">Email: <a href="mailto:nick@nljweb.net">nick@nljweb.net</a></p>
-      <p style="text-align: center;">Location: Dudley, UK</p>
+      <h2>Contact</h2>
+      <div class="contact-details">
+        <p>Email: <a href="mailto:nick@nljweb.net">nick@nljweb.net</a></p>
+        <p>Location: Dudley, UK</p>
+      </div>
     </section>
   </main>
 
   <div class="expanded-card" id="expandedCard">
     <div class="expanded-content">
-      <span class="close-btn" onclick="closeCard()">&times;</span>
+      <span class="close-btn" onclick="closeCard()">×</span>
       <h2 id="expandedTitle"></h2>
       <p id="expandedDescription"></p>
     </div>
@@ -77,19 +77,17 @@
   </footer>
 
   <script>
-    document.getElementById('themeToggle').addEventListener('click', function () {
-      const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-      document.documentElement.setAttribute('data-theme', isDark ? 'light' : 'dark');
-      this.textContent = isDark ? '🌙' : '🌞';
-    });
-
-    function expandCard(title, desc) {
-      document.getElementById('expandedTitle').textContent = title;
-      document.getElementById('expandedDescription').textContent = desc;
+    document.getElementById('themeToggle').onclick = function(){
+      const d = document.documentElement;
+      const isDark = d.getAttribute('data-theme')==='dark';
+      d.setAttribute('data-theme', isDark?'light':'dark');
+      this.textContent = isDark?'🌙':'🌞';
+    };
+    function expandCard(t,d){ document.getElementById('expandedTitle').innerText=t;
+      document.getElementById('expandedDescription').innerText=d;
       document.getElementById('expandedCard').classList.add('show');
     }
-
-    function closeCard() {
+    function closeCard(){
       document.getElementById('expandedCard').classList.remove('show');
     }
   </script>
