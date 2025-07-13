@@ -51,7 +51,7 @@
 
     <section id="cv">
       <h2>Certifications</h2>
-      <ul>
+      <ul class="cert-list">
         <li>CompTIA A+ | Core 1 + 2</li>
         <li>IOSH Managing Safely</li>
         <li>Microsoft Power Platform</li>
@@ -61,8 +61,10 @@
 
     <section id="contact">
       <h2>Contact</h2>
-      <p>Email: <a href="mailto:nick@nljweb.net">nick@nljweb.net</a></p>
-      <p>Location: Dudley, UK</p>
+      <div class="contact-details">
+        <p>Email: <a href="mailto:nick@nljweb.net">nick@nljweb.net</a></p>
+        <p>Location: Dudley, UK</p>
+      </div>
     </section>
   </main>
 
@@ -79,21 +81,22 @@
   </footer>
 
   <script>
-    document.getElementById("themeToggle").addEventListener("click", function () {
-      const isDark = document.documentElement.getAttribute("data-theme") === "dark";
-      document.documentElement.setAttribute("data-theme", isDark ? "light" : "dark");
-      this.textContent = isDark ? "🌙" : "🌞";
+    document.getElementById('themeToggle').addEventListener('click', function () {
+      const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+      document.documentElement.setAttribute('data-theme', isDark ? 'light' : 'dark');
+      this.textContent = isDark ? '🌙' : '🌞';
     });
 
     function expandCard(title, desc) {
-      document.getElementById("expandedTitle").textContent = title;
-      document.getElementById("expandedDescription").textContent = desc;
-      document.getElementById("expandedCard").classList.add("show");
+      document.getElementById('expandedTitle').textContent = title;
+      document.getElementById('expandedDescription').textContent = desc;
+      document.getElementById('expandedCard').classList.add('show');
     }
 
     function closeCard() {
-      document.getElementById("expandedCard").classList.remove("show");
+      document.getElementById('expandedCard').classList.remove('show');
     }
   </script>
 </body>
 </html>
+
