@@ -15,10 +15,11 @@
     <a href="#cv">CV</a>
     <a href="#contact">Contact</a>
   </nav>
-  <div id="themeToggleContainer">
-    <span id="themeToggle">🌙</span>
-    <span id="themeLabel">Dark Mode</span>
-  </div>
+<div id="themeToggleContainer">
+  <span id="themeLabel">Dark Mode</span>
+  <span id="themeToggle">🌙</span>
+</div>
+
 </header>
 
 
@@ -86,12 +87,11 @@
     <p>&copy; 2025 Nick Jordan</p>
   </footer>
 
-  <script>
+<script>
   const toggle = document.getElementById('themeToggle');
   const label = document.getElementById('themeLabel');
-  const toggleContainer = document.getElementById('themeToggleContainer');
 
-  toggleContainer.addEventListener('click', function () {
+  document.getElementById('themeToggleContainer').addEventListener('click', function () {
     const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
     document.documentElement.setAttribute('data-theme', isDark ? 'light' : 'dark');
     toggle.textContent = isDark ? '🌙' : '🌞';
@@ -108,6 +108,7 @@
     document.getElementById('expandedCard').classList.remove('show');
   }
 </script>
+
 
 </body>
 </html>
