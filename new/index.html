@@ -87,11 +87,15 @@
 
   <script>
     document.getElementById('themeToggle').onclick = function () {
-      const d = document.documentElement;
-      const isDark = d.getAttribute('data-theme') === 'dark';
-      d.setAttribute('data-theme', isDark ? 'light' : 'dark');
-      this.textContent = isDark ? '🌙' : '🌞';
-    };
+     const toggle = document.getElementById('themeToggle');
+  const label = document.getElementById('themeLabel');
+
+  document.getElementById('themeToggleContainer').addEventListener('click', function () {
+    const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+    document.documentElement.setAttribute('data-theme', isDark ? 'light' : 'dark');
+    toggle.textContent = isDark ? '🌙' : '🌞';
+    label.textContent = isDark ? 'Dark Mode' : 'Light Mode';
+  });
 
     function expandCard(title, desc) {
       document.getElementById('expandedTitle').textContent = title;
